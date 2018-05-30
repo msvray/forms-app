@@ -1,0 +1,9 @@
+<legend>{{label}}</legend>
+<form class="form-group">
+  <div *ngFor="let valId of valIds; let i=index" class="custom-control custom-radio">
+    <input type="radio" id="{{id}}{{i}}"  [(ngModel)]="value" name="name{{id}}" value="{{valId}}" class="custom-control-input">
+    <label class="custom-control-label" for="{{id}}{{i}}">
+      {{labelList[i]}} {{valId}}
+    </label>
+  </div>
+</form>

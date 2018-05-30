@@ -1,0 +1,27 @@
+
+<div class="form-group testName">
+    <label class="col-form-label" for="inputDefault">Test Name:</label>
+    <input type="text" class="form-control" [(ngModel)]="name" id="inputDefault">
+</div>
+<br>
+<div checkboxMakerAnchor radiobuttonMakerAnchor selectboxMakerAnchor textinputMakerAnchor></div>
+<br>
+<button class="btn btn-primary mainButton" (click)="addInput(inputModal)" >+ Add Input</button>
+<br>
+<br>
+<button routerLink="../main" class="mainButton" (click)="saveTest()">Save</button>
+<br>
+<ng-template #inputModal let-c="close" let-d="dismiss">
+    <div class="modal-header">
+        <h4 class="modal-title">Select an input</h4>
+        <button type="button" class="close" aria-label="Close" (click)="d()">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+    <div class="modal-body">
+        <button type="button" class="btn btn-outline-dark mainButton" (click)="c('addCheckbox')">Add Checkbox</button><br>
+        <button type="button" class="btn btn-outline-dark mainButton" (click)="c('addRadiobutton')">Add Radio Button</button><br>
+        <button type="button" class="btn btn-outline-dark mainButton" (click)="c('addSelectbox')">Add Selectbox</button><br>
+        <button type="button" class="btn btn-outline-dark mainButton" (click)="c('addTextinput')">Add Text Input</button>
+    </div>
+</ng-template>

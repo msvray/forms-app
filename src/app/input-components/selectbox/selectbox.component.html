@@ -1,0 +1,13 @@
+<div class="form-group">
+    <label for="{{id}}">{{label}}</label>
+    <div *ngIf="viewAll">
+      <select multiple="" class="form-control" id="{{id}}" [(ngModel)]="value" >
+        <option *ngFor="let valId of valIds" value="{{valId}}">{{valId}}</option>
+      </select>
+    </div>
+    <div *ngIf="!viewAll">
+      <select class="form-control" id="{{id}}" [(ngModel)]="value" >
+        <option *ngFor="let valId of valIds" value="{{valId}}">{{valId}}</option>
+      </select>
+    </div>
+  </div>

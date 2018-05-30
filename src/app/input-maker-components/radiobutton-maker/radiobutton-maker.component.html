@@ -1,0 +1,30 @@
+<div class="inputArea">
+  <div class="card border-secondary mb-3">
+    <div class="card-header">
+      <span>Radiobutton</span>
+      <span style="float: right;"><button type="button" class="btn btn-danger" (click)="createComponentService.deleteInput(id)">Delete</button></span>
+    </div>
+    <div class="card-body">
+        <div class="form-group">
+            <label class="col-form-label" for="{{id}}InputDefault">Label</label>
+            <input type="text" class="form-control" [(ngModel)]="label" id="{{id}}InputDefault">
+          </div>
+      <div class="form-group" *ngFor="let valId of valIds; let i=index">
+        <label class="col-form-label" for="{{id}}Val">Value {{i + 1}}</label>
+        <input type="text" class="form-control" [(ngModel)]="values[i]" id="{{id}}Val">
+      </div>
+      <div *ngIf="valIds.length < 5">
+        <button type="button" class="btn btn-primary" (click)="addValue()">+ Add Value</button>
+        <br><br>
+      </div>
+      <div class="form-group">
+        <label for="{{id}}ValLabeled">Label the values</label>
+        <select class="form-control" id="{{id}}ValLabeled" [(ngModel)]="labelValsBy">
+          <option value="No">No</option>
+          <option value="Alphabetically">Alphabetically</option>
+          <option value="Numerically">Numerically</option>
+        </select>
+      </div>
+    </div>
+  </div>
+</div>

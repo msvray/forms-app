@@ -1,0 +1,9 @@
+
+<table class="table table-hover">
+  <tbody>
+    <tr class="table-secondary" *ngFor="let form of forms; let i = index" (click)="selectForm(i)" routerLink="../fill-in-form">
+      <th scope="row"><h2>{{form.name}}</h2></th>
+      <th style="text-align: right"><h2>></h2></th>
+    </tr>
+  </tbody>
+</table> 

@@ -1,0 +1,7 @@
+<legend>{{label}}</legend>
+<div class="form-group" >
+  <div *ngFor="let valId of valIds; let i=index" class="custom-control custom-checkbox">
+    <input type="checkbox" class="custom-control-input" [(ngModel)]="values[i]" (click)="uncheckOthers(i)" id="{{id}}{{i}}">
+    <label class="custom-control-label" for="{{id}}{{i}}">{{valId}}</label>
+  </div>
+</div>

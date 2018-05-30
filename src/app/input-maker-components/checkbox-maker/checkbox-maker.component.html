@@ -1,0 +1,24 @@
+<div class="inputArea">
+  <div class="card border-secondary mb-3">
+    <div class="card-header">
+      <span>Checkbox</span>
+      <span style="float: right;"><button type="button" class="btn btn-danger" (click)="createComponentService.deleteInput(id)">Delete</button></span>
+    </div>
+    <div class="card-body">
+        <div class="form-group">
+            <label class="col-form-label" for="{{id}}InputDefault">Label</label>
+            <input type="text" class="form-control" [(ngModel)]="label" id="{{id}}InputDefault">
+          </div>
+      <div class="form-group" *ngFor="let valId of valIds; let i=index">
+        <label class="col-form-label" for="{{id}}ValId">Value {{i + 1}}</label>
+        <input type="text" class="form-control" [(ngModel)]="values[i]" id="{{id}}ValId">
+      </div>
+      <button *ngIf="valIds.length < 5" type="button" class="btn btn-primary" (click)="addValue()">+ Add Value</button>
+      <div *ngIf="valIds.length > 1" class="custom-control custom-checkbox">
+        <br>
+        <input type="checkbox" class="custom-control-input" [(ngModel)]="onlyOneCheck" id="{{id}}OnlyOneCheck">
+        <label class="custom-control-label" for="{{id}}OnlyOneCheck">Allow only one check</label>
+      </div>
+    </div>
+  </div>
+</div>
