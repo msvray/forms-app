@@ -1,0 +1,12 @@
+<div *ngIf="selectedTest">
+  <span>TestName: {{selectedTest.name}}</span>
+  <br><br>
+  <div *ngFor="let selected of selectedTest.formElements">
+    <span>{{selected.label}}</span>
+    <br>
+    <span>{{selected.selectedText}}: {{selected.value}}</span>
+    <br><br>
+  </div>
+</div>
+
+

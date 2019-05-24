@@ -46,11 +46,9 @@ export class CheckboxComponent implements OnInit {
 
   private uncheckOthers(index:number){
     if(this.onlyOneCheck){
-      if(this.values[index]){
-        for(var i = 0; i < this.values.length; i++){
-          if(i != index){
-            this.values[i] = false;
-          }
+      for(var i = 0; i < this.values.length; i++){
+        if(i != index){
+          this.values[i] = false;
         }
       }
     }

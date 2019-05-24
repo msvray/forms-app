@@ -6,11 +6,14 @@ import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 
 import { appRouter } from './app.router';
 import { AppComponent } from './app.component';
+
+//page components
 import { MainComponent } from './main/main.component';
 import { FillInComponent } from './fill-in/fill-in.component';
 import { CreateComponent } from './create/create.component';
 import { ReviewComponent } from './review/review.component';
 import { FillInFormComponent } from './fill-in-form/fill-in-form.component';
+import { ReviewFormComponent } from './review-form/review-form.component';
 
 //create components/directives
 import { CheckboxAnchorDirective } from './input-components/checkbox/checkbox.directive';
@@ -34,6 +37,7 @@ import { InputMakerComponent } from './input-maker-components/input-maker/input-
 //providers
 import { CreateComponentService } from '../providers/create-component-provider/create-component.service';
 import { FillInComponentService } from '../providers/fill-in-component-provider/fill-in-component.service';
+import { ReviewComponentService } from '../providers/review-component-provider/review-component.service';
 
 
 @NgModule({
@@ -43,6 +47,8 @@ import { FillInComponentService } from '../providers/fill-in-component-provider/
     FillInComponent,
     CreateComponent,
     ReviewComponent,
+    FillInFormComponent,
+    ReviewFormComponent,
     //fill in components/directives
     CheckboxAnchorDirective,
     CheckboxComponent,
@@ -61,8 +67,7 @@ import { FillInComponentService } from '../providers/fill-in-component-provider/
     SelectboxMakerAnchorDirective,
     SelectboxMakerComponent,
     CheckboxMakerAnchorDirective,
-    CheckboxMakerComponent,
-    FillInFormComponent
+    CheckboxMakerComponent
   ],
   imports: [
     BrowserModule,
@@ -72,7 +77,8 @@ import { FillInComponentService } from '../providers/fill-in-component-provider/
   ],
   providers: [
     CreateComponentService,
-    FillInComponentService
+    FillInComponentService,
+    ReviewComponentService
   ],
   bootstrap: [AppComponent]
 })

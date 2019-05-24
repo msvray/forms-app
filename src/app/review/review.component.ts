@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ReviewComponentService } from '../../providers/review-component-provider/review-component.service';
 
 @Component({
   selector: 'app-review',
@@ -8,7 +9,7 @@ import { Component, OnInit } from '@angular/core';
 export class ReviewComponent implements OnInit {
   private tests; 
 
-  constructor() { }
+  constructor(private reviewComponentService: ReviewComponentService) { }
 
   ngOnInit() {
     this.tests = JSON.parse(localStorage.getItem('tests') || '[]');
@@ -16,6 +17,7 @@ export class ReviewComponent implements OnInit {
   }
 
   private selectTest(index:number){
+    this.reviewComponentService.setFormId(index);
   }
 
 }

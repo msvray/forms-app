@@ -6,6 +6,7 @@ import { FillInComponent } from './fill-in/fill-in.component';
 import { FillInFormComponent } from './fill-in-form/fill-in-form.component';
 import { CreateComponent } from './create/create.component';
 import { ReviewComponent } from './review/review.component';
+import { ReviewFormComponent } from './review-form/review-form.component';
 
 export const router: Routes = [
     {
@@ -32,6 +33,10 @@ export const router: Routes = [
     {
         path: 'review',
         component: ReviewComponent
+    },
+    {
+        path: 'review-form',
+        component: ReviewFormComponent
     }
 ];
 export const appRouter: ModuleWithProviders = RouterModule.forRoot(router);
